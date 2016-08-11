@@ -15,6 +15,47 @@ $(window).load(function() {
 
 });
 
+/* =================================
+   EARLY ACCESS MODAL
+=================================== */
+function showEarlyAccessForm(){
+    "use strict";
+    $('.modal-title').html('Get Early Access');
+    $('.modal-subtitle').html('Enter your email and Join Beta.');
+
+    $('.error').removeClass('alert alert-danger').html('');
+}
+
+function openEarlyAccessModal(){
+    "use strict";
+    showEarlyAccessForm();
+    $('#loginModal').modal('show');
+}
+
+/* ==========================================
+   MAILCHIMP EARLY-ACCESS - MODAL SUBSCRIPTION
+============================================= */
+$("#earlyaccess-modal").ajaxChimp({
+    callback: mailchimpCallbackmodal,
+    url: "http://wvmsc.us1.list-manage.com/subscribe/post?u=15acac0b0b2a8313d4be0fa68&amp;id=2d314cc68b" // Replace your mailchimp post url inside double quote "".
+});
+
+function mailchimpCallbackmodal(resp) {
+if(resp.result === 'success') {
+    $('.lm-success')
+    .html('<i class="icon icon_check_alt2"></i>' + resp.msg)
+    .fadeIn(1000);
+
+    $('.lm-failed').fadeOut(500);
+
+} else if(resp.result === 'error') {
+    $('.lm-failed')
+    .html('<i class="icon icon_close_alt2"></i>' + resp.msg)
+    .fadeIn(1000);
+
+    $('.lm-success').fadeOut(500);
+}
+}
 
 /* =================================
    LOGIN-SIGNUP MODAL
@@ -249,7 +290,7 @@ if (onMobile === true) {
 ============================================= */
 $(".mailchimp-subscribe").ajaxChimp({
     callback: mailchimpCallback,
-    url: "http://themedept.us9.list-manage.com/subscribe/post?u=63465a86fdd5f3b9fa31f9278&amp;id=52df53337f" // Replace your mailchimp post url inside double quote "".
+    url: "http://wvmsc.us1.list-manage.com/subscribe/post?u=15acac0b0b2a8313d4be0fa68&amp;id=2d314cc68b" // Replace your mailchimp post url inside double quote "".
 });
 
 function mailchimpCallback(resp) {
