@@ -12,10 +12,22 @@
     <!-- TITLE OF SITE -->
     <title>Wave | Crowdfunding the shows you want to see</title>
 
+    <!-- Facebook link data -->
     <meta name="description" content="Crowdfunding the shows you want to see." />
     <meta name="keywords" content="wave, wave music, crowdfunding, music, concert, toronto, indie, artists, responsive landing page" />
     <meta name="author" content="Wave Music">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-82454316-1', 'auto');
+      ga('send', 'pageview');
+    </script>
 
     <!-- FAVICON  -->
     <link rel="icon" href="assets/images/favicon/favicon.ico">
@@ -74,12 +86,12 @@
         <!-- =========================
              HEADER
         ============================== -->
-        <header class="header solid-bg youtube-bg" id="top">
+        <header class="header youtube-bg" id="top" style="background-image:url('assets/images/fallback-bg.png')">
             <!-- Background Overlay -->
             <div class="overlay">
 
                 <!-- Youtube Video Header Background -->
-                <div id="P1" class="player" style="display:block; margin: auto; background: rgba(0,0,0,0.5)" data-property="{videoURL:'https://www.youtube.com/watch?v=5jpfHwy4Ndk',containment:'#top',startAt:0,mute:true,autoPlay:true,loop:true,opacity:0.75}"></div>
+                <div id="P1" class="player" style="display:block; margin: auto; background: rgba(0,0,0,0.5)" data-property="{videoURL:'https://www.youtube.com/watch?v=5jpfHwy4Ndk',containment:'#top',startAt:0,mute:true,autoPlay:true,loop:true,opacity:1}"></div>
 
                 <!-- =========================================
                      Navigation
